@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.neudesic.catquiz.viewmodels.CatQuizViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/catQuizPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        tools:context=".views.CatQuizPageActivity">
+
+        <TextView
+            android:id="@+id/questionText"
+            style="@style/Heading2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="128dp"
+            android:maxLines="2"
+            android:gravity="center"
+            android:text="@{viewmodel.questionText}"
+            tools:text="What is your favorite color?"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryBackground"
+            android:gravity="end"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="55dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="55dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <Button
+                android:id="@+id/firstChoiceButton"
+                style="@style/ButtonStyleSecondary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="13dp"
+                tools:text="Choice 1"
+                android:text="@{viewmodel.firstChoiceText}"/>
+
+            <Button
+                android:id="@+id/secondChoiceButton"
+                style="@style/ButtonStyleSecondary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="13dp"
+                tools:text="Choice 2"
+                android:text="@{viewmodel.secondChoiceText}"/>
+
+            <Button
+                android:id="@+id/thirdChoiceButton"
+                style="@style/ButtonStyleSecondary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:text="@{viewmodel.thirdChoiceText}"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <com.neudesic.catquiz.customviews.DotView
+                    style="@style/DotViewStyle"
+                    android:id="@+id/firstDot"
+                    app:isActive="@{viewmodel.isFirstDotViewActive()}"/>
+
+                <com.neudesic.catquiz.customviews.DotView
+                    style="@style/DotViewStyle"
+                    android:id="@+id/secondDot"
+                    app:isActive="@{viewmodel.isSecondDotViewActive()}"/>
+
+                <com.neudesic.catquiz.customviews.DotView
+                    style="@style/DotViewStyle"
+                    android:id="@+id/thirdDot"
+                    app:isActive="@{viewmodel.isThirdDotViewActive()}"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

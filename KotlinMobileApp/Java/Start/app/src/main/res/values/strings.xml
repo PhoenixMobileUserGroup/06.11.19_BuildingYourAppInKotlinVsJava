@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CatQuiz</string>
+
+    <string name="general_quiz">General cat quiz</string>
+    <string name="food_quiz">Food cat quiz</string>
+    <string name="result_page_text">Congratulations!</string>
+    <string name="result_page_text2">You are a</string>
+    <string name="take_me_home_right_meow">Take me home right meow</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DotView">
+        <attr name="isActive" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="CatQuizCompletionView">
+        <attr name="completionRate" format="integer" />
+    </declare-styleable>
+</resources>
